@@ -7,16 +7,7 @@
 char * arr= "string";
 
 
-
-char **WordsArray(FILE *fp){                // returns pointer to a array of array of chars(pointer to a pointer of char).
-    
-
-    fseek(fp, 0, SEEK_END);                 // to point at the last of the file with offset 0 so lastByte+0;
-    int lengthOfFile= ftell(fp);            // ftell tells us sends current position.
-    
-    rewind(fp);                             //pointer back to 0th byte
-
-    char ** arrOfStrings;                   //declaration of pointer to array of char pointers       
+long getNoOfWordsInTXT(FILE *fp){
     int count=0;                            //count number for no of words
     int wordFound=0;                        //word found flag for checking if word is found or we are getting spaces
     int c;                                  //for storing byte 
@@ -37,7 +28,24 @@ char **WordsArray(FILE *fp){                // returns pointer to a array of arr
             continue;                       //
         }
     }
+}
 
-    printf("no of words are: %d", count);
+long getSize(FILE *fp){                     //get size(bytes) of a file.
+    fseek(fp, 0,SEEK_END);                  //jump to end with seek end and 0 is offset from seek end.
+    long size= ftell(fp);                   //ftell tells offset from start(0) to current pointer on file.             
+    return size;                       
+}
+
+char **WordsArray(FILE *fp){                // returns pointer to a array of array of chars(pointer to a pointer of char).
+    
+    fseek(fp, 0, SEEK_END);                 // to point at the last of the file with offset 0 so lastByte+0;
+    int lengthOfFile= ftell(fp);            // ftell tells us sends current position.
+    rewind(fp);                             //pointer back to 0th byte
+
+    char ** arrOfStrings;                   //declaration of pointer to array of char pointers       
+    
+
+
+    // so far we have got number of words 
     return arrOfStrings;
 }

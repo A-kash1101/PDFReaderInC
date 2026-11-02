@@ -1,33 +1,28 @@
 #include<stdio.h>
 #include"readFromTxtFile.h"
 
-
-long getSize(FILE *fp){
-    fseek(fp, 0,SEEK_END);
-    return ftell(fp);
-}
-
 int main(){
     
-    FILE *fp= fopen("./assets/sample.pdf", "rb");
+    FILE *fp= fopen("./assets/sample.txt", "rb");
 
     if(fp!=NULL){
         printf("file opened!!\n");
-
-        printf("file size is: %ld\n", getSize(fp) );
-        
-        // rewind(fp);
-        fclose(fp);
-       
     }else{
-
         printf("Error opening file\n");
         return 1;
-
     }
+
+
+    printf("file size is: %ld\n", getSize(fp) );
+
 
     WordsArray(fopen("./assets/sample.txt", "r"));
     
+
+    fclose(fp);
+
+    printf("%c%c%c%c", 65, 66,'\r', 67);
+
     return 0;
 
 }
