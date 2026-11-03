@@ -1,6 +1,11 @@
 #include<stdio.h>
 #include"readFromTxtFile.h"
 
+int funciotn(){
+    int a=10;
+    return a;
+}
+
 int main(){
     
     FILE *fp= fopen("./assets/sample.txt", "rb");
@@ -15,13 +20,12 @@ int main(){
 
     printf("file size is: %ld\n", getSize(fp) );
 
-
-    WordsArray(fopen("./assets/sample.txt", "r"));
+    // WordsArray(fopen("./assets/sample.txt", "r"));
     
 
-    fclose(fp);
+    // fclose(fp);
 
-    printf("%c%c%c%c", 65, 66,'\r', 67);
+    printf("size of file is: %d", getNoOfWordsInTXT(fp));
 
     return 0;
 
