@@ -2,6 +2,7 @@
 #include<math.h>
 
 
+
 #pragma once
 
 char * arr= "string";
@@ -16,7 +17,8 @@ long getNoOfWordsInTXT(FILE *fp){
         
         
         if(c!=' ' && c!='\n' 
-        && c!='\r' && c!='\t' ){            //checking if byte is 32 if yes then 
+        && c!='\r' && c!='\t' 
+        && c!= ','){            //checking if byte is 32 if yes then 
             if(wordFound==0){               //if word found flag is 0 then a new word has been found 
                 count++;                    //we increase word count
                 wordFound=1;                //word flag is set to 1;
@@ -30,6 +32,7 @@ long getNoOfWordsInTXT(FILE *fp){
     }
     return count;
 }
+
 
 long getSize(FILE *fp){                     //get size(bytes) of a file.
     fseek(fp, 0,SEEK_END);                  //jump to end with seek end and 0 is offset from seek end.

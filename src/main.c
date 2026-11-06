@@ -1,7 +1,9 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include<stdio.h>
 #include"readFromTxtFile.h"
 
-int funciotn(){
+int function(){
     int a=10;
     return a;
 }
@@ -14,7 +16,7 @@ int main(){
         printf("file opened!!\n");
     }else{
         printf("Error opening file\n");
-        return 1;
+          return 1;
     }
 
 
@@ -29,4 +31,3 @@ int main(){
 
     return 0;
 
-}
