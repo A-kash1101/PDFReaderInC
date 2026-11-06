@@ -16,7 +16,7 @@ int main(){
         printf("file opened!!\n");
     }else{
         printf("Error opening file\n");
-          return 1;
+        return 1;
     }
 
 
@@ -30,4 +30,4 @@ int main(){
     printf("size of file is: %d", getNoOfWordsInTXT(fp));
 
     return 0;
-
+}
