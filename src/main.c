@@ -27,7 +27,7 @@ int main(){
 
     // fclose(fp);
 
-    printf("size of file is: %d", getNoOfWordsInTXT(fp));
-
+    printf("size of file is: %d\n", getNoOfWordsInTXT(fp));
+    printf("Hello this is from main");
     return 0;
 }
